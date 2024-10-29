@@ -13,7 +13,7 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final controller = PageController(viewportFraction: 0.8, keepPage: true);
+  final controller = PageController(viewportFraction: 1, keepPage: true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

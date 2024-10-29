@@ -16,7 +16,7 @@ class OnTapLogin extends StatelessWidget {
       child: InkWell(
         onTap: OnButtonPress,
         child: Padding(
-          padding: const EdgeInsets.only(left: 29,right: 29),
+          padding: const EdgeInsets.only(left: 29,right: 29,),
           child: Container(decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: colorconst.PRIMARY

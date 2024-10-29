@@ -9,20 +9,23 @@ class CustomInputSearch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        boxShadow: [BoxShadow(
-          offset: Offset(0, 2),blurRadius: 9,color: colorconst.BLACK.withOpacity(.1)
-        )]
+    return Padding(
+      padding: const EdgeInsets.only(top: 16,left: 16,right: 16),
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: [BoxShadow(
+            offset: Offset(0, 2),blurRadius: 9,color: colorconst.BLACK.withOpacity(.1)
+          )]
+        ),
+        child: TextField(decoration: InputDecoration(
+          filled: true,
+          fillColor: colorconst.WHITE,
+          border: OutlineInputBorder(borderSide: BorderSide.none),
+          prefixIcon: Icon(Icons.search,color: colorconst.GREY7,),
+          suffixIcon: Icon(Icons.mic_none,color: colorconst.GREY7,),
+          hintText: "Search any Product..",hintStyle: GoogleFonts.montserrat(fontSize: 14,color: colorconst.GREY7)
+        ),),
       ),
-      child: TextField(decoration: InputDecoration(
-        filled: true,
-        fillColor: colorconst.WHITE,
-        border: OutlineInputBorder(borderSide: BorderSide.none),
-        prefixIcon: Icon(Icons.search,color: colorconst.GREY7,),
-        suffixIcon: Icon(Icons.mic_none,color: colorconst.GREY7,),
-        hintText: "Search any Product..",hintStyle: GoogleFonts.montserrat(fontSize: 14,color: colorconst.GREY7)
-      ),),
     );
   }
 }

@@ -1,8 +1,11 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_app/gobal_widgets/CustomInputSearch.dart';
 import 'package:ecommerce_app/utlit/color.dart';
 import 'package:ecommerce_app/utlit/images.dart';
+import 'package:ecommerce_app/utlit/dummydb.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -32,68 +35,125 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       actions: [CircleAvatar(backgroundImage: AssetImage("assets/images/profile.png"),),
       SizedBox(width: 10,)],),
-    body: Padding(
-      padding: const EdgeInsets.only(left: 22,right: 22),
-      child: Column(
-        children: [
-          CustomInputSearch(),
-          SizedBox(height: 16,),
-          _SecondSection()
-        ],
+    body: Column(
+      children: [
+        CustomInputSearch(),
+        SizedBox(height: 16,),
+        _SecondSection(),
+        CarouselSlider(
+  options: CarouselOptions(
+    height: 189,
+      viewportFraction: 1,
+      initialPage: 0,
+      enableInfiniteScroll: true,
+      reverse: false,
+      autoPlay: true,
+      autoPlayInterval: Duration(seconds: 3),
+      autoPlayAnimationDuration: Duration(milliseconds: 800),
+      autoPlayCurve: Curves.fastOutSlowIn,
+      enlargeCenterPage: true,
+      enlargeFactor: 0.3,
+      onPageChanged: (index, reason) {
+        
+      },
+      scrollDirection: Axis.horizontal,
+   ),
+  items: List.generate(5, (index) => Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage("assets/images/Rectangle 48.png"))
+        ),
       ),
+    ),
+  ),)
+),
+       AnimatedSmoothIndicator(    
+   activeIndex: 0,    
+   count: 3,    
+   effect: WormEffect(), 
+) ,
+      ],
     ),);
   }
 
-  Padding _SecondSection() {
-    return Padding(
-          padding: const EdgeInsets.only(left: 3,right: 1),
-          child: Column(
+  Column _SecondSection() {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 22,right: 21),
+          child: Row(
             children: [
-              Row(
-                children: [
-                  Text("All Featured",style: GoogleFonts.montserrat(fontSize: 18,fontWeight: FontWeight.w600,color: colorconst.BLACK),),
-                  Spacer(),
-                  Container(
-                    height: 24,
-                    width: 61,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: colorconst.WHITE
-                    ),
-                    child: Center(
-                      child: Row(
-                        children: [
-                          Text("Sort",style: GoogleFonts.montserrat(fontSize: 12,color: colorconst.BLACK),),
-                          Icon(Icons.swap_vert,color: colorconst.BLACK2,)
-                        ],
-                      ),
-                    ),
+              Text("All Featured",style: GoogleFonts.montserrat(fontSize: 18,fontWeight: FontWeight.w600,color: colorconst.BLACK),),
+              Spacer(),
+              Container(
+                height: 24,
+                width: 61,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: colorconst.WHITE
+                ),
+                child: Center(
+                  child: Row(
+                    children: [
+                      Text("Sort",style: GoogleFonts.montserrat(fontSize: 12,color: colorconst.BLACK),),
+                      Icon(Icons.swap_vert,color: colorconst.BLACK2,)
+                    ],
                   ),
-                  SizedBox(width: 12,),
-                  Container(
-                    height: 24,
-                    width: 61,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: colorconst.WHITE
-                    ),
-                    child: Center(
-                      child: Row(
-                        children: [
-                          Text("Filter",style: GoogleFonts.montserrat(fontSize: 12,color: colorconst.BLACK),),
-                          Icon(Icons.filter_alt_outlined,color: colorconst.BLACK2,)
-                        ],
-                      ),
-                    ),
-                  )
-                ],
+                ),
               ),
-              Row(children: [
-                
-              ],)
+              SizedBox(width: 12,),
+              Container(
+                height: 24,
+                width: 61,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: colorconst.WHITE
+                ),
+                child: Center(
+                  child: Row(
+                    children: [
+                      Text("Filter",style: GoogleFonts.montserrat(fontSize: 12,color: colorconst.BLACK),),
+                      Icon(Icons.filter_alt_outlined,color: colorconst.BLACK2,)
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
-        );
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 24,top: 24),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Column(
+              children: [
+                Row(
+                  children: List.generate(Dummydb.featurscreen.length, (index) {
+                    var Feature=Dummydb.featurscreen[index];
+                   return Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Column(
+                    children: [
+                      CircleAvatar(radius: 32,
+                      backgroundImage: AssetImage(Feature["image url"]),),
+                      SizedBox(height: 4,),
+                      Text(Feature["name"],style: GoogleFonts.montserrat(fontSize: 10,
+                      color: colorconst.TEXTCOLORMAIN),)
+                    ],
+                  ),
+                ); 
+                  },)),
+              ],
+            ),
+          ),
+        )
+      ],
+    );
   }
 }
 
