@@ -37,6 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ),],
       ),
      body: PageView.builder(
+      controller: controller,
       itemCount: imagesConst.IMAGESONBOARD.length,
       itemBuilder: (context, index) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 21),
@@ -63,7 +64,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             SmoothPageIndicator(
                 controller: controller,
                 count: imagesConst.IMAGESONBOARD.length,
-                effect: const WormEffect(
+                effect:  WormEffect(
                   dotHeight: 16,
                   dotWidth: 16,
                   type: WormType.thinUnderground,

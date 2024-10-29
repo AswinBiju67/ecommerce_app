@@ -15,6 +15,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int activeIndex=0;
+  final controller = PageController(viewportFraction: 1, keepPage: true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,44 +42,90 @@ class _HomeScreenState extends State<HomeScreen> {
         CustomInputSearch(),
         SizedBox(height: 16,),
         _SecondSection(),
-        CarouselSlider(
-  options: CarouselOptions(
-    height: 189,
-      viewportFraction: 1,
-      initialPage: 0,
-      enableInfiniteScroll: true,
-      reverse: false,
-      autoPlay: true,
-      autoPlayInterval: Duration(seconds: 3),
-      autoPlayAnimationDuration: Duration(milliseconds: 800),
-      autoPlayCurve: Curves.fastOutSlowIn,
-      enlargeCenterPage: true,
-      enlargeFactor: 0.3,
-      onPageChanged: (index, reason) {
-        
-      },
-      scrollDirection: Axis.horizontal,
-   ),
-  items: List.generate(5, (index) => Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.fill,
-            image: AssetImage("assets/images/Rectangle 48.png"))
-        ),
-      ),
-    ),
-  ),)
-),
+        _thirdsection(),
        AnimatedSmoothIndicator(    
-   activeIndex: 0,    
+   activeIndex: activeIndex,    
    count: 3,    
    effect: WormEffect(), 
-) ,
+)
       ],
+    ),);
+  }
+
+  CarouselSlider _thirdsection() {
+    return CarouselSlider.builder(
+    itemCount: 3,
+    options: CarouselOptions(
+      height: 189,
+        viewportFraction: 1,
+        initialPage: 0,
+        enableInfiniteScroll: true,
+        reverse: false,
+        autoPlay: true,
+        autoPlayInterval: Duration(seconds: 3),
+        autoPlayAnimationDuration: Duration(milliseconds: 800),
+        autoPlayCurve: Curves.fastOutSlowIn,
+        enlargeCenterPage: true,
+        enlargeFactor: 0.3,
+        onPageChanged: (index, reason) {
+          activeIndex=index;
+          setState(() {
+            
+          });
+        },
+        scrollDirection: Axis.horizontal,
+     ),
+    itemBuilder: 
+    (context, index, realIndex) => 
+    
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Container(
+  decoration: BoxDecoration(
+    image: DecorationImage(
+      fit: BoxFit.fill,
+      image: AssetImage("assets/images/Rectangle 48.png"))
+  ),
+        width: double.infinity,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 14,top: 30),
+          child: Container(
+            height: 136,
+            width: 109,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("50-40% OFF",style: GoogleFonts.montserrat(
+                  fontSize: 20,fontWeight: FontWeight.bold,color: colorconst.WHITE
+                ),),
+                SizedBox(height: 8,),
+                Text("Now in (product)\nAll colours",style: GoogleFonts.montserrat(
+                  fontSize: 12,color: colorconst.WHITE
+                ),),
+                SizedBox(height: 12,),
+                Container(
+                  height: 32,
+                  width: 100,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: colorconst.WHITE),
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Shop Now",style: GoogleFonts.montserrat(fontSize: 12,fontWeight: FontWeight.w600,color: colorconst.WHITE),),
+                        Icon(Icons.arrow_right_alt,color: colorconst.WHITE,)
+                      ],
+                    ),
+                  ),),
+              ],
+            ),
+          ),
+        )),
+      ),
     ),);
   }
 
