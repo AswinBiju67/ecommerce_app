@@ -16,6 +16,13 @@ class imagesConst{
   ];
   
   static const  SQR="aassets/images/Rectangle 48.png";
+  static const  List FOURTHSECTIO=["assets/images/image 15.png",
+  "assets/images/image 15.png", ];
+  static const  OFFER="assets/images/offer.png";
+  static const  EMOJI="assets/images/😱.png";
+
+
+  
    
 
 
