@@ -20,6 +20,12 @@ class imagesConst{
   "assets/images/image 15.png", ];
   static const  OFFER="assets/images/offer.png";
   static const  EMOJI="assets/images/😱.png";
+  static const  LS="assets/images/Rectangle 55.png";
+  static const List FSWCTIMAGE=["assets/images/Mask Group (1).png",
+  "assets/images/image 18.png",
+  "assets/images/Mask Group (3).png"];
+  static const  SALE="assets/images/Mask Group (4).png";
+
 
 
   

@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/bottomnavibar/bottomnavibar.dart';
 import 'package:ecommerce_app/gobal_widgets/ontap_login.dart';
 import 'package:ecommerce_app/home_screen/home_screen.dart';
 import 'package:ecommerce_app/utlit/color.dart';
@@ -53,7 +54,7 @@ class _GetStartedState extends State<GetStarted> {
               SizedBox(height: 44,),
               OnTapLogin(textin: "Get Started",
               OnButtonPress: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Bottomnavibar(),));
               },)
             ],),
           )

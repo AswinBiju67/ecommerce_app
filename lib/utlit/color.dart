@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class colorconst{
   static const PRIMARY=Color(0xffF83758);
   static const PRIMARY2=Color(0xffFE735C);
-
+  static const PRIMARY3=Color(0xffFD6E87);
   static const BLACK=Color(0xff000000);
     static const GREYSH3=Color(0xffA0A0A1);
     static const GREYSH1=Color(0xffA8A8A9);
@@ -17,6 +17,8 @@ class colorconst{
     static const BLUE=Color(0xff4392F9);
     static const GREY7=Color(0xffBBBBBB);
     static const GREY8=Color(0xffA4A9B3);
+    static const GREY9=Color(0xffE7E7EB);
+
     static const BLACK2=Color(0xff232327);
     static const TEXTCOLORMAIN=Color(0xff21003D);
     static const SCAFFCOLOR=Color(0xffF9F9F9);
