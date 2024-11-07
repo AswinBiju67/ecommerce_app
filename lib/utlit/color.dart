@@ -23,6 +23,10 @@ class colorconst{
     static const TEXTCOLORMAIN=Color(0xff21003D);
     static const SCAFFCOLOR=Color(0xffF9F9F9);
     static const BLUE2=Color(0xff4392F9);
+    static const BLUE3=Color(0xff0B3689);
+    static const PRIMARY4=Color(0xffFFCCD5);
+
+
 
 
 

@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/home_screen/home_screen.dart';
 import 'package:ecommerce_app/utlit/color.dart';
+import 'package:ecommerce_app/wishlist_screen/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 
 class Bottomnavibar extends StatefulWidget {
@@ -13,7 +14,7 @@ class _BottomnavibarState extends State<Bottomnavibar> {
   int selectedindex=0;
     static const List screen=[
     HomeScreen(),
-    Text("Downloads",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.white)),
+    WishlistScreen(),
     Text("Downloads",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.white)),
     Text("More",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.white)),
 
@@ -22,17 +23,22 @@ class _BottomnavibarState extends State<Bottomnavibar> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: colorconst.WHITE,
-        child: Icon(Icons.shopping_cart),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-        onPressed: () {
-        
-      },),
+      floatingActionButton: InkWell(
+        onTap: () {
+        },
+        child: FloatingActionButton(
+          backgroundColor: colorconst.WHITE,
+          child: Icon(Icons.shopping_cart),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+          onPressed: () {
+          
+        },),
+      ),
       
       body:  Center(child: screen[selectedindex],),
      bottomNavigationBar: BottomNavigationBar(
       currentIndex: selectedindex,
+      selectedItemColor: colorconst.PRIMARY,
       onTap: (value) {
         print(value);
         HomeScreen();

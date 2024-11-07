@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child: Container(
                   height: 172,
-                  width: 343,
+                  width: double.infinity,
                   color: colorconst.GREY9,
                   child: Row(
                     children: [
@@ -130,6 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 144,
                           imagesConst.LS),
                       ),
+                      SizedBox(width: 30,),
                         Padding(
                           padding: const EdgeInsets.only(top: 35,),
                           child: Column(
@@ -167,6 +168,54 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(height:24 ,),
               _Fifthsection(),
+              SizedBox(height: 16,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Container(
+                  height: 270,
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        height: 200,
+                        width: double.infinity,
+                        fit: BoxFit.fill,
+                        imagesConst.SALE),
+                        SizedBox(height: 8,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("New Arrivals",style: GoogleFonts.montserrat(fontSize: 20,fontWeight: FontWeight.w500),),
+                                Text("Summer’ 25 Collections",style: GoogleFonts.montserrat(fontSize: 16),)
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 12),
+                              child: Container(
+                                height: 28,
+                                width: 89,
+                                decoration: BoxDecoration(
+                                  color: colorconst.PRIMARY,
+                                  borderRadius: BorderRadius.circular(5)
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("View All",style: GoogleFonts.montserrat(fontSize: 12,fontWeight: FontWeight.w600,color: colorconst.WHITE),),
+                                    Icon(Icons.arrow_right_alt_rounded,color: colorconst.WHITE)
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
+                        )
+                    ],
+                  ),
+                ),
+              )
         ],
          
         ),

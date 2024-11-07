@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/productdetail_screen/productdetail_screen.dart';
 import 'package:ecommerce_app/splash_screen/splash_screen.dart';
 import 'package:ecommerce_app/utlit/color.dart';
 import 'package:flutter/material.dart';

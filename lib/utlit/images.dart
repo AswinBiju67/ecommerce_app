@@ -25,7 +25,13 @@ class imagesConst{
   "assets/images/image 18.png",
   "assets/images/Mask Group (3).png"];
   static const  SALE="assets/images/Mask Group (4).png";
-
+  static const  DETAIL="assets/images/unsplash_NoVnXXmDNi0 (1).png";
+  static const List TEXT1=["6 UK",
+  "7 UK",
+  "8 UK",
+  "9 UK",
+  "10 UK"];
+  
 
 
   
