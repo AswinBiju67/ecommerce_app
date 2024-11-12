@@ -16,6 +16,8 @@ class imagesConst{
   ];
   
   static const  SQR="aassets/images/Rectangle 48.png";
+  static const  LIMAGE="assets/images/1.png";
+  static const  L2="assets/images/2.png";
   static const  List FOURTHSECTIO=["assets/images/image 15.png",
   "assets/images/image 15.png", ];
   static const  OFFER="assets/images/offer.png";
@@ -30,6 +32,11 @@ class imagesConst{
   "7 UK",
   "8 UK",
   "9 UK",
+  "10 UK",
+  "7 UK",
+  "8 UK",
+  "9 UK",
+  "10 UK",
   "10 UK"];
   
 
